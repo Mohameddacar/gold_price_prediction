@@ -1,0 +1,89 @@
+# -------------------------
+# Python
+# -------------------------
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# pip metadata
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Byte-compiled files
+*.py[cod]
+
+# -------------------------
+# Jupyter
+# -------------------------
+.ipynb_checkpoints/
+*.ipynb_checkpoint/
+
+# -------------------------
+# VS Code
+# -------------------------
+.vscode/
+.settings/
+
+# -------------------------
+# Node / Web (if used)
+# -------------------------
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# -------------------------
+# OS / System files
+# -------------------------
+.DS_Store
+Thumbs.db
+
+# -------------------------
+# Plotly / Matplotlib Outputs
+# -------------------------
+output/*.html
+output/*.tmp
+
+# Keep PNGs in assets but ignore temporary files
+assets/*.tmp
+assets/*.bak
+
+# -------------------------
+# Environment / Secrets
+# -------------------------
+*.env
+*.env.local
+*.secret
+*.key
+*.token
+
+# -------------------------
+# IDE files
+# -------------------------
+.idea/
+*.iml
+
+# -------------------------
+# Logs
+# -------------------------
+*.log
+
+# -------------------------
+# Build / Cache
+# -------------------------
+.cache/
+dist/
+build/
+
+# -------------------------
+# Python packaging
+# -------------------------
+*.egg-info/
+*.egg
