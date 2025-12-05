@@ -1,11 +1,9 @@
 services:
   - type: web
-    name: gold-price-predictor
+    name: gold-price-prediction
     env: python
     buildCommand: pip install -r requirements.txt
     startCommand: gunicorn app:app
     envVars:
       - key: PYTHON_VERSION
-        value: 3.9.18
-    plan: free
-    autoDeploy: true
+        value: 3.9.16
