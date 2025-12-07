@@ -6,7 +6,8 @@ import pandas as pd
 import numpy as np
 from datetime import datetime
 
-app = Flask(__name__)
+# Rename the Flask app instance
+application = Flask(__name__)
 
 print("="*60)
 print("GOLD PRICE PREDICTOR - MACHINE LEARNING POWERED")
@@ -53,8 +54,10 @@ except:
 print(f"\n✅ Status: Model = {'Loaded' if model else 'Not loaded'}, Scaler = {'Loaded' if scaler else 'Not loaded'}")
 print("="*60)
 
-@app.route('/')
+@application.route('/')
 def home():
+    # ... [KEEP ALL THE EXISTING HTML CODE FROM YOUR APP.PY]
+    # Copy the entire HTML from your app.py here
     return '''
     <!DOCTYPE html>
     <html>
@@ -536,7 +539,7 @@ def home():
     </html>
     '''
 
-@app.route('/predict', methods=['POST'])
+@application.route('/predict', methods=['POST'])
 def predict():
     if model is None:
         return jsonify({'error': 'Model not loaded. Please check server logs.'}), 500
@@ -568,7 +571,7 @@ def predict():
     except Exception as e:
         return jsonify({'error': str(e)}), 400
 
-@app.route('/health')
+@application.route('/health')
 def health():
     return jsonify({
         'status': 'ok',
@@ -581,4 +584,6 @@ if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     print(f"\n🚀 Gold Price Predictor starting on http://localhost:{port}")
     print("="*60)
-    app.run(host='0.0.0.0', port=port, debug=True)
+    application.run(host='0.0.0.0', port=port, debug=False)
+
+    
